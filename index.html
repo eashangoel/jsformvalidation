@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <h1>Form Validation</h1>
+      <form novalidate action="get" class="form">
+        <div class="form-item">
+          <label for="email" class="email">Enter e-mail</label>
+          <input type="email" name="email" id="email" required />
+          <span class="error-email error" aria-live="polite"></span>
+        </div>
+        <div class="form-item">
+          <label for="country" class="country">Enter country</label>
+          <input type="text" name="country" id="country" required />
+          <span class="error-country error" aria-live="polite"></span>
+        </div>
+        <div class="form-item">
+          <label for="zip" class="zip">Enter zipcode</label>
+          <input type="number" name="zip" id="zip" minlength="10" required />
+          <span class="error-zip error" aria-live="polite"></span>
+        </div>
+        <div class="form-item">
+          <label for="password" class="password">Enter password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            required
+          />
+          <span class="error-password error" aria-live="polite"></span>
+        </div>
+        <div class="form-item">
+          <label for="password-confirm" class="password-confirm"
+            >Confirm password</label
+          >
+          <input
+            type="password"
+            name="password-confirm"
+            id="password-confirm"
+            required
+          />
+          <span class="error-password-confirm error" aria-live="polite"></span>
+        </div>
+      </form>
+      <button type="submit" class="submit-button">Validate!</button>
+    </div>
+    <img src="confetti.webp" alt="" hidden="true" class="confetti" />
+    <script src="javascript.js"></script>
+  </body>
+</html>
